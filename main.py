@@ -6,11 +6,37 @@ Config.set('graphics', 'height', '480')
 
 from kivy.app import App
 from kivy.uix.pagelayout import PageLayout
+from kivy.uix.listview import ListView
+from kivy.adapters.listadapter import ListAdapter
+from track import TrackData
+from track import TrackItem
 
 
 # Root Widget
 class Prototype(PageLayout):
     pass
+
+
+class TrackListView(ListView):
+    
+    def __init__(self, **kwargs):
+        super(TrackListView, self).__init__(**kwargs)
+        
+        def converter(row_index, obj):
+            return {'title': obj.title}
+        
+        self.adapter = ListAdapter(data=[],
+                                   args_converter=converter,
+                                   propagate_selection_to_data=True,
+                                   selection_mode='multiple',
+                                   cls=TrackItem)
+        self.adapter.data = self.generate_pseudo_data()
+    
+    def generate_pseudo_data(self):
+        data_items = []
+        for i in range(0, 3):
+            data_items.append(TrackData())
+        return data_items
 
 
 class PrototypeApp(App):
