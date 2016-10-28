@@ -1,15 +1,15 @@
 from kivy.config import Config
 # Resize the Window for the Desktop Environment
-Config.set('graphics', 'width', '400')
-Config.set('graphics', 'height', '700')
+Config.set('graphics', 'width', '640')
+Config.set('graphics', 'height', '480')
 
 
 from kivy.app import App
-from kivy.uix.widget import Widget
+from kivy.uix.pagelayout import PageLayout
 
 
 # Root Widget
-class Prototype(Widget):
+class Prototype(PageLayout):
     pass
 
 
