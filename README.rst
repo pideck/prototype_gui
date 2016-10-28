@@ -1,13 +1,13 @@
-prototype_gui
+Pideck / Nyx Prototype GUI
 ================================================================================
-
 Repository to contain GUI Prototype Code
 
-requirements
+
+Requirements
 ================================================================================
 - Requires kivy
     + https://kivy.org/docs/installation/installation.html
 
-execution
+Execution
 ================================================================================
 ``python main.py``
