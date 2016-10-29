@@ -42,6 +42,8 @@ class TrackListView(ListView):
 
 class PrototypeApp(App):
     Factory.register('SearchView', module='search_view')
+    Factory.register('PlaylistView', module='playlist_view')
+    Factory.register('PlayingView', module='playing_view')
     
     def build(self):
         return Prototype()
