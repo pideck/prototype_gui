@@ -6,6 +6,7 @@ Config.set('graphics', 'height', '480')
 
 from kivy.app import App
 from kivy.uix.pagelayout import PageLayout
+from kivy.factory import Factory
 from kivy.uix.listview import ListView
 from kivy.adapters.listadapter import ListAdapter
 from track import TrackData
@@ -40,6 +41,8 @@ class TrackListView(ListView):
 
 
 class PrototypeApp(App):
+    Factory.register('SearchView', module='search_view')
+    
     def build(self):
         return Prototype()
 
